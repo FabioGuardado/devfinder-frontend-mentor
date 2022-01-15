@@ -1,10 +1,14 @@
 import React from 'react';
 
+import Header from './components/Header/Header';
+import AppContainer from './components/AppContainer/AppContainer';
+
 function App() {
   return (
-    <>
-      <h1>Devfinder App</h1>
-    </>
+    <div className="wrapper">
+      <Header />
+      <AppContainer />
+    </div>
   );
 }
 

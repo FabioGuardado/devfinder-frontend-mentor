@@ -1,11 +1,10 @@
 @import '../../styles/settings.scss';
 
 .search-bar {
-  margin-top: 2rem;
+  margin-top: $containers-margin;
   background-color: $secondary-background-color;
   padding: 1rem;
   border-radius: $sections-radius;
-  width: 100%;
 
   &__group {
     width: 100%;
@@ -36,12 +35,9 @@
     border: none;
     font-size: 1.3rem;
     font-family: 'Roboto mono', monospace;
-    border-bottom: $input-bottom-border-measures transparent;
-    transition: all ease-in-out 0.2s;
 
     &:active,
     &:focus {
-      border-bottom: $input-bottom-border-measures $accent-color;
       outline: 0;
     }
   }

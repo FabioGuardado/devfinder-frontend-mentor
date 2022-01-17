@@ -1,7 +1,7 @@
 @import '../../styles/settings.scss';
 
 .app-container {
-  margin-top: $containers-margin;
+  margin: $containers-margin 0;
   padding: 3rem;
   background-color: $secondary-background-color;
   border-radius: $sections-radius;

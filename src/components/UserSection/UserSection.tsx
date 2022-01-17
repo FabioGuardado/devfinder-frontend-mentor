@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faMapMarkerAlt,
   faLink,
@@ -12,6 +11,7 @@ import UserSectionProps from '../../types/UserSectionProps';
 import IGitHubUser from '../../interfaces/IGitHubUser';
 import useIsMounted from '../../hooks/useIsMounted';
 import { getUserByUsername } from '../../API/users';
+import AddInfoItem from './AddInfoItem/AddInfoItem';
 
 const UserSection: React.FunctionComponent<UserSectionProps> = ({
   username,
@@ -81,57 +81,20 @@ const UserSection: React.FunctionComponent<UserSectionProps> = ({
         </div>
 
         <div className="app-container__additional-information">
-          <div
-            className={`app-container__additional-information__item ${
-              !userDetails.location && 'disabled'
-            }`}
-          >
-            <span className="app-container__additional-information__item__icon">
-              <FontAwesomeIcon icon={faMapMarkerAlt} />
-            </span>
-            <span>
-              {userDetails.location ? userDetails.location : 'Not available'}
-            </span>
-          </div>
+          <AddInfoItem data={userDetails.location} icon={faMapMarkerAlt} />
 
-          <div
-            className={`app-container__additional-information__item ${
-              !userDetails.twitter_username && 'disabled'
-            }`}
-          >
-            <span className="app-container__additional-information__item__icon">
-              <FontAwesomeIcon icon={faTwitter} />
-            </span>
-            <span>
-              {userDetails.twitter_username
+          <AddInfoItem
+            data={
+              userDetails.twitter_username
                 ? `@${userDetails.twitter_username}`
-                : 'Not available'}
-            </span>
-          </div>
+                : null
+            }
+            icon={faTwitter}
+          />
 
-          <div
-            className={`app-container__additional-information__item ${
-              !userDetails.blog && 'disabled'
-            }`}
-          >
-            <span className="app-container__additional-information__item__icon">
-              <FontAwesomeIcon icon={faLink} />
-            </span>
-            <span>{userDetails.blog ? userDetails.blog : 'Not available'}</span>
-          </div>
+          <AddInfoItem data={userDetails.blog} icon={faLink} />
 
-          <div
-            className={`app-container__additional-information__item ${
-              !userDetails.company && 'disabled'
-            }`}
-          >
-            <span className="app-container__additional-information__item__icon">
-              <FontAwesomeIcon icon={faBuilding} />
-            </span>
-            <span>
-              {userDetails.company ? `${userDetails.company}` : 'Not available'}
-            </span>
-          </div>
+          <AddInfoItem data={userDetails.company} icon={faBuilding} />
         </div>
       </div>
     </div>

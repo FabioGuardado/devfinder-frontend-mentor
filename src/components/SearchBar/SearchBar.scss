@@ -35,10 +35,15 @@
     border: none;
     font-size: 1.3rem;
     font-family: 'Roboto mono', monospace;
+    color: $secondary-text-color;
 
     &:active,
     &:focus {
       outline: 0;
+    }
+
+    &::placeholder {
+      color: $secondary-text-color;
     }
   }
 

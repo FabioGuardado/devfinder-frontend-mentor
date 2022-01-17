@@ -9,6 +9,7 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 import './UserSection.scss';
 import defaultPicture from '../../assets/defaultPicture.png';
+import UserSectionProps from '../../types/UserSectionProps';
 
 const UserSection: React.FunctionComponent<UserSectionProps> = ({
   username,
@@ -89,7 +90,3 @@ const UserSection: React.FunctionComponent<UserSectionProps> = ({
 };
 
 export default UserSection;
-
-type UserSectionProps = {
-  username: null | string;
-};

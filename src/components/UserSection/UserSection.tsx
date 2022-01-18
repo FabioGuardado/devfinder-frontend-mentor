@@ -12,6 +12,7 @@ import IGitHubUser from '../../interfaces/IGitHubUser';
 import useIsMounted from '../../hooks/useIsMounted';
 import { getUserByUsername } from '../../API/users';
 import AddInfoItem from './AddInfoItem/AddInfoItem';
+import moment from 'moment';
 
 const UserSection: React.FunctionComponent<UserSectionProps> = ({
   username,
@@ -27,6 +28,10 @@ const UserSection: React.FunctionComponent<UserSectionProps> = ({
 
     getData();
   }, [username]);
+
+  const joinDate: string | null = userDetails
+    ? moment(userDetails.created_at).format('DD MMM YYYY')
+    : null;
 
   return userDetails ? (
     <div className="app-container">
@@ -51,7 +56,7 @@ const UserSection: React.FunctionComponent<UserSectionProps> = ({
             </span>
           </div>
           <div className="app-container__information-header__second-col">
-            <h3>Joined {userDetails.created_at}</h3>
+            <h3>Joined {joinDate}</h3>
           </div>
         </div>
 

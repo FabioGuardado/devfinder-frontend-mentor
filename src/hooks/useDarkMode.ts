@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import useMediaQuery from './useMediaQuery';
+import transition from '../utils/darkModeTransition';
 
 const COLOR_SCHEME_QUERY = '(prefers-color-scheme: dark)';
 
@@ -9,6 +10,7 @@ function useDarkMode() {
   const { current: documentElement } = useRef(document.documentElement);
 
   useEffect(() => {
+    transition();
     if (isCurrentlyDark) {
       documentElement.setAttribute('data-theme', 'dark');
     } else {

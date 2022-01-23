@@ -5,9 +5,24 @@
   padding: 0;
 }
 
+html {
+  --primary-background-color: #f5f8ff;
+  --secondary-background-color: #fefefe;
+  --primary-text-color: #000000;
+  --secondary-text-color: #969696;
+  --accent-color: #0079fb;
+}
+
+html[data-theme='dark'] {
+  --primary-background-color: #141c2f;
+  --secondary-background-color: #1f2a48;
+  --primary-text-color: #ffffff;
+  --secondary-text-color: #acacac;
+}
+
 body {
-  background-color: $primary-background-color;
-  color: $primary-text-color;
+  background-color: var(--primary-background-color);
+  color: var(--primary-text-color);
   font-family: 'Roboto Mono', monospace;
   font-size: 16px;
 }

@@ -2,7 +2,7 @@
 
 .search-bar {
   margin-top: $containers-margin;
-  background-color: $secondary-background-color;
+  background-color: var(--secondary-background-color);
   padding: 1rem;
   border-radius: $sections-radius;
 
@@ -24,7 +24,7 @@
     margin-left: 2rem;
     margin-right: 1.5rem;
     font-size: 1.6rem;
-    color: $accent-color;
+    color: var(--accent-color);
   }
 
   &__input {
@@ -35,7 +35,7 @@
     border: none;
     font-size: 1.3rem;
     font-family: 'Roboto mono', monospace;
-    color: $secondary-text-color;
+    color: var(--secondary-text-color);
 
     &:active,
     &:focus {
@@ -43,7 +43,7 @@
     }
 
     &::placeholder {
-      color: $secondary-text-color;
+      color: var(--secondary-text-color);
     }
   }
 
@@ -51,8 +51,8 @@
     padding: 1rem 0.5rem;
     width: 120px;
     justify-self: right;
-    color: $primary-text-color;
-    background-color: $accent-color;
+    color: #fff;
+    background-color: var(--accent-color);
     border: none;
     border-radius: $btn-radius;
     font-size: 1.2rem;

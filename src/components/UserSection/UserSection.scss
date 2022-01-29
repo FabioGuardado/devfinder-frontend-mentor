@@ -1,5 +1,15 @@
 @import '../../styles/settings.scss';
 
+.not-found {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &__text {
+    margin: 5rem 0;
+  }
+}
+
 .app-container {
   margin: $containers-margin 0;
   padding: 3rem;

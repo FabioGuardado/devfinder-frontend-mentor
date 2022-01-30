@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 import './SearchBar.scss';
 import SearchBarProps from '../../types/SearchBarProps';
+import AlertContext from '../../context/AlertContext';
 
 const SearchBar: React.FunctionComponent<SearchBarProps> = ({
   setUsername,
 }) => {
   const [textInput, setTextInput] = useState<string>('');
+  const alertContext = useContext(AlertContext);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTextInput(e.target.value);
@@ -16,7 +18,13 @@ const SearchBar: React.FunctionComponent<SearchBarProps> = ({
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    if (textInput.trim().length > 0) setUsername(textInput);
+    if (textInput.trim().length > 0) {
+      setUsername(textInput);
+      setTextInput('');
+    } else
+      alertContext?.showErrorAlert(
+        'Type something in the searchbar to get a user',
+      );
   };
 
   return (
@@ -33,6 +41,7 @@ const SearchBar: React.FunctionComponent<SearchBarProps> = ({
               type="text"
               placeholder="Search GitHub username..."
               onChange={handleChange}
+              value={textInput}
             />
           </div>
           <button type="submit" className="search-bar__btn--submit">

@@ -1,0 +1,42 @@
+.alert {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  box-shadow: -15px 15px 23px -5px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: -15px 15px 23px -5px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: -15px 15px 23px -5px rgba(0, 0, 0, 0.35);
+  animation: fade-in-out 5000ms;
+  opacity: 0;
+
+  &__text {
+    color: #ffffff;
+    font-weight: 700;
+  }
+}
+
+.success {
+  background-color: #28a117;
+}
+.error {
+  background-color: #be2b26;
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
